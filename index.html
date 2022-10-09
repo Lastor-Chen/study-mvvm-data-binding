@@ -16,20 +16,17 @@
     </ul>
   </div>
   <script type="module">
-    import VM from './view-model.esm.js'
+    import { createVM } from './view-model.esm.js'
 
-    window.app = new VM({
-      el: '#app',
-      data: {
-        title: 'User',
-        user: {
-          name: 'Tom',
-          profile: {
-            age: 18,
-          },
-        }
+    window.app = createVM({
+      title: 'User',
+      user: {
+        name: 'Tom',
+        profile: {
+          age: 18,
+        },
       }
-    })
+    }).mount('#app')
   </script>
 </body>
 </html>

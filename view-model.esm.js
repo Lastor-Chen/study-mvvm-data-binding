@@ -105,4 +105,14 @@ class VM {
   }
 }
 
-export default VM
+/** @param {object} data */
+function createVM(data = {}) {
+  return {
+    /** @param {string} selector */
+    mount(selector) {
+      return new VM({ el: selector, data })
+    }
+  }
+}
+
+export { createVM }
