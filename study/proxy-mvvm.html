@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MVVM</title>
+</head>
+<body>
+  <div id="app">
+    <h1>語言: {{ language }}</h1>
+    <h2>組成:</h2>
+    <ul>
+      <li>{{ makeUp.one }}</li>
+      <li>{{ makeUp.two }}</li>
+      <li>{{ makeUp.three }}</li>
+    </ul>
+    <h2>描述:</h2>
+    <p>{{ describe }}</p>
+    <p>計算: {{ sum }}</p>
+    <input type="text" placeholder="123" v-model="language">
+  </div>
+
+  <script type="module">
+    import MVVM from './proxy-mvvm.js'
+
+    window.app = new MVVM({
+      el: '#app',
+      data: {
+        language: 'JavaScript',
+        makeUp: {
+          one: 'ECMAScript',
+          two: 'DOM',
+          three: 'BOM',
+        },
+        describe: '手刻 MVVM',
+        a: 1,
+        b: 2,
+      },
+      computed: {
+        /** @this MVVM['_data'] */
+        sum() {
+          return this.a + this.b
+        }
+      },
+      mounted() {
+        console.log('mounted')
+        console.log('data.a', this.a)
+      }
+    })
+  </script>
+</body>
+</html>
