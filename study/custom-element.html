@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="custom-ce.js"></script> -->
+  <!-- <script src="counter-ce.js"></script> -->
+  <title>CE Data Binding</title>
+</head>
+<body>
+  <h1>One way data binding example</h1>
+  <counter-component
+    current-counter=0
+    data-text="Component-based Counter: $$"
+    ></counter-component>
+  <!-- <button id="btnUp">Up</button> -->
+  <!-- <button id="btnDown">Down</button> -->
+
+  <script src="custom-element.js"></script>
+  <script>
+    // const counterCE = document.querySelector('counter-component')
+
+    // document.querySelector('#btnUp').addEventListener('click', () => {
+    //   counterCE.currentCounter++
+    // })
+    // document.querySelector('#btnDown').addEventListener('click', () => {
+    //   counterCE.currentCounter--
+    // })
+  </script>
+</body>
+</html>
